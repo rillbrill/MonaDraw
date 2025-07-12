@@ -19,7 +19,7 @@ import {
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
-  // 모나세이프 관련 데이터
+  // MonaDraw 관련 데이터
   const lotteryPools = [
     { 
       name: 'BTC 복권 풀', 
@@ -164,7 +164,7 @@ const Dashboard = () => {
         {[
           { id: 'overview', label: '개요', icon: BarChart3 },
           { id: 'pools', label: '복권 풀', icon: Award },
-          { id: 'tickets', label: '응모권', icon: Ticket },
+          { id: 'tickets', label: '티켓', icon: Ticket },
           { id: 'market', label: '시장', icon: TrendingUp },
           { id: 'announcements', label: '공지사항', icon: AlertCircle }
         ].map((tab) => (
@@ -268,7 +268,7 @@ const Dashboard = () => {
               </div>
             </motion.div>
 
-            {/* 응모권 현황 */}
+            {/* 티켓 현황 */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -276,7 +276,7 @@ const Dashboard = () => {
             >
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <Ticket className="w-6 h-6 text-green-400" />
-                내 응모권
+                내 티켓
               </h2>
               <div className="space-y-4">
                 {ticketTypes.map((ticket, index) => (
@@ -333,7 +333,7 @@ const Dashboard = () => {
       {activeTab === 'tickets' && (
         <div className="text-center py-20">
           <Ticket className="w-16 h-16 text-green-400 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-white mb-2">응모권 관리</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">티켓 관리</h2>
           <p className="text-gray-400">전용 티켓과 공용 티켓을 관리하세요</p>
         </div>
       )}

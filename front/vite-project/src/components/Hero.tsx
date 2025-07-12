@@ -282,7 +282,7 @@ const Hero: React.FC = () => {
         </div>
       </ScrollSection>
 
-      {/* 섹션 2: 응모권 획득 방법 */}
+      {/* 섹션 2: 티켓 획득 방법 */}
       <ScrollSection delay={0.2}>
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
@@ -297,12 +297,12 @@ const Hero: React.FC = () => {
             </div>
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                응모권 획득
+                티켓 획득
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              응모권을 획득할 수 있는 방법은 두 가지가 존재합니다<br />
-              이 응모권들을 각 복권풀에 예치하는 방법으로 복권에 응모할 수 있습니다
+              티켓을 획득할 수 있는 방법은 두 가지가 존재합니다<br />
+              이 티켓들을 각 복권풀에 예치하는 방법으로 복권에 응모할 수 있습니다
             </p>
           </motion.div>
 
@@ -324,7 +324,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
                              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                 MonaDraw 선물시장에서 청산을 당했을 때, 청산 금액에 비례하여 해당 코인 복권풀에만 응모 가능한 응모권을 획득합니다.
+                 MonaDraw 선물시장에서 청산을 당했을 때, 청산 금액에 비례하여 해당 코인 복권풀에만 응모 가능한 티켓을 획득합니다.
                </p>
               <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
                 <p className="text-red-300 font-semibold">특징: 청산된 코인의 복권풀에만 응모 가능</p>
@@ -348,7 +348,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
                              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                 MonaDraw 코인을 스테이킹하여 모든 복권풀에 응모 가능한 범용 응모권을 획득합니다.
+                 MonaDraw 코인을 스테이킹하여 모든 복권풀에 응모 가능한 범용 티켓을 획득합니다.
                </p>
               <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
                 <p className="text-green-300 font-semibold">특징: 모든 복권풀에 응모 가능 (전략적 활용)</p>
@@ -358,7 +358,7 @@ const Hero: React.FC = () => {
         </div>
       </ScrollSection>
 
-      {/* 섹션 3: 체인링크 랜더마이즈 */}
+      {/* 섹션 3: Chainlink 랜더마이즈 */}
       <ScrollSection delay={0.2}>
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
@@ -378,7 +378,7 @@ const Hero: React.FC = () => {
              </h2>
                          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                Chainlink의 랜더마이즈 기능을 통해 공평하고 투명하게 당첨자가 정해지며<br />
-               각 복권풀마다 발행된 응모권의 총 수량을 인풋하여 각 풀마다 한명의 당첨자를 선별합니다
+               각 복권풀마다 발행된 티켓의 총 수량을 인풋하여 각 풀마다 한명의 당첨자를 선별합니다
              </p>
           </motion.div>
 
@@ -401,7 +401,7 @@ const Hero: React.FC = () => {
             <FeatureCard
               icon={BarChart3}
               title="수량 기반 선정"
-              description="발행된 응모권의 총 수량을 기준으로 정확한 확률 계산"
+              description="발행된 티켓의 총 수량을 기준으로 정확한 확률 계산"
               gradient="bg-gradient-to-br from-purple-500/20 to-purple-600/20"
               delay={0.3}
             />
@@ -429,7 +429,7 @@ const Hero: React.FC = () => {
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               각 복권풀의 당첨 주기는 1주일이며<br />
-              만약 당첨된 응모권이 해당 복권풀에 예치가 되지 않은 상태라면<br />
+              만약 당첨된 티켓이 해당 복권풀에 예치가 되지 않은 상태라면<br />
               그 누적 금액은 그 다음 주로 이연되어 상금이 누적됩니다
             </p>
           </motion.div>
@@ -473,7 +473,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                당첨된 응모권이 예치되지 않은 경우 상금이 다음 주로 이연되어 더 큰 상금을 제공합니다.
+                당첨된 티켓이 예치되지 않은 경우 상금이 다음 주로 이연되어 더 큰 상금을 제공합니다.
               </p>
             </motion.div>
           </div>
