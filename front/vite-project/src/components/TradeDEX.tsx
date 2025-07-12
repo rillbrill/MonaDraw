@@ -36,6 +36,8 @@ const TradeDEX = () => {
   const [price, setPrice] = useState('');
   const [timeframe, setTimeframe] = useState('1m');
   const [forceDump, setForceDump] = useState(false);
+  const [showLiquidatedModal, setShowLiquidatedModal] = useState(false); // 추가
+  const [showTicketModal, setShowTicketModal] = useState(false); // 추가
 
   // Mock data
   const tradingPairs: TradingPair[] = [
@@ -68,9 +70,24 @@ const TradeDEX = () => {
 
   const handleSubmitOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    // 매수/매도 버튼 클릭 시 forceDump를 true로 변경
     setForceDump(true);
+    if (side === 'buy') {
+      setTimeout(() => {
+        setShowLiquidatedModal(true);
+      }, 3000);
+    }
     console.log('Order submitted:', { side, orderType, amount, price });
+  };
+
+  // Liquidation 창 닫기 핸들러
+  const handleCloseLiquidated = () => {
+    setShowLiquidatedModal(false);
+    setShowTicketModal(true);
+  };
+
+  // Ticket 창 닫기 핸들러
+  const handleCloseTicket = () => {
+    setShowTicketModal(false);
   };
 
   return (
@@ -253,6 +270,37 @@ const TradeDEX = () => {
           </div>
         </div>
       </div>
+
+      {/* Liquidation Modal */}
+      {showLiquidatedModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-[#181C24] rounded-2xl shadow-2xl p-8 max-w-xs w-full flex flex-col items-center">
+            <span className="text-2xl font-bold text-red-500 mb-4">You have been liquidated!</span>
+            <button
+              className="mt-4 px-6 py-2 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-700 transition"
+              onClick={handleCloseLiquidated}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Ticket Modal */}
+      {showTicketModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-[#181C24] rounded-2xl shadow-2xl p-8 max-w-xs w-full flex flex-col items-center">
+            <img src="/public/Ticket1.png" alt="Ticket" className="w-24 h-24 mb-4" />
+            <span className="text-2xl font-bold text-green-400 mb-4">You have received 2 private tickets.</span>
+            <button
+              className="mt-4 px-6 py-2 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-700 transition"
+              onClick={handleCloseTicket}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Trading Info Panels */}
       <div className="flex flex-col gap-2 items-center mb-8 mt-12">
